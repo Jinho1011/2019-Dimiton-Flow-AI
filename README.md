@@ -1,4 +1,5 @@
 # automatic-dam-management-system
-## 구조 설계
+
+## outline
 - Arduino -> firebase storage (que)
-- NodeJs -> firebase -> tensorflow.py -> react  
+- NodeJs -> firebase -> tensorflow.py -> react(?)
