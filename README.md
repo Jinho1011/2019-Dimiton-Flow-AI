@@ -6,3 +6,6 @@
 
 ## details
 - data -> tensor : pass .dat file by fs
+
+## http requests
+- get data per 0.1 sec : 라우트 하나 열어서 post로 데이터 받으면 될듯
