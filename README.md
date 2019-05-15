@@ -3,7 +3,7 @@
 ## TODO
 - [x] http requests  
 - [x] firebase queue  
-- [ ] web page design  
+- [x] web page design  
 - [ ] implement route  
  
 ## page required elements
