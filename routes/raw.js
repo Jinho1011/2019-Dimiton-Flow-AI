@@ -1,10 +1,10 @@
 var express = require('express')
+const { exec } = require("child_process")
 var router = express.Router()
 
-var rawData
-
 router.post('/', function (req, res, next) {
-    rawData = req.body
+    var rawData = req.body  
+	console.log("TCL: rawData", rawData)
     return res.redirect('/')
 })
 
