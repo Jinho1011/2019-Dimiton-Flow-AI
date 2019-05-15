@@ -4,6 +4,7 @@
 - [x] http requests  
 - [x] firebase queue  
 - [ ] web page design  
+- [ ] implement route  
  
 ## 페이지 구현
 - home : 현재 상태 간략하게 표시
