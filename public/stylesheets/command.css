@@ -1,0 +1,10 @@
+.cmd-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form div {
+    padding: 5px 10px;
+}
