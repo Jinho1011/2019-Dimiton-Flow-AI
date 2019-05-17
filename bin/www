@@ -100,6 +100,6 @@ tcp_server.listen(tcp_port, () => {
   console.log(`tcp server listening on port : ${tcp_port}`)
 })
 
-tcp_server.on('data', (d) => {
+tcp_server.on('connection', (d) => {
 	console.log("TCL: tcp_server_data", d)
 })
