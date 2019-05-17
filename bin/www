@@ -16,8 +16,8 @@ var http = require("http");
  * Get port from environment and store in Express.
  */
 
-var portNum = 80;
-var port = normalizePort(process.env.PORT || portNum);
+var http_port = 80;
+var port = normalizePort(process.env.PORT || http_port);
 app.set("port", port);
 
 /**
@@ -88,29 +88,18 @@ function onListening() {
   var addr = server.address();
   var bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
   debug("Listening on " + bind);
-  console.log(`NodeJs Server listening on port : ${portNum}`);
-
-  // admin.initializeApp({
-  //   credential: admin.credential.cert(serviceAccount),
-  //   databaseURL: "https://automatic-dam.firebaseio.com"
-  // });
-
-  // var database = admin.database();
-  // var ref = database.ref("queue/");
-  // ref.push().set('on1')
-
-  // addInQueue.use(cors());
-  // addInQueue.get("/:command", (req, res) => {
-  //   var ret = {};
-  //   var command = req.params.command;
-  //   ret["command"] = command;
-  //   firebase
-  //     .ref("/queue")
-  //     .push()
-  //     .set(command);
-
-  //   res.status(200).send(JSON.stringify(ret));
-  // });
-
-  // admin.ref("queue/").set({ test: "test"});
+  console.log(`NodeJs Server listening on port : ${http_port}`);
 }
+
+/* TCP SERVER */
+var net = require('net');
+var tcp_port = 8080;
+var tcp_server = net.createServer();
+
+tcp_server.listen(tcp_port, () => {
+  console.log(`tcp server listening on port : ${tcp_port}`)
+})
+
+tcp_server.on('data', (d) => {
+	console.log("TCL: tcp_server_data", d)
+})
