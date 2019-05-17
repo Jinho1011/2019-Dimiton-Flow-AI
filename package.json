@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "pm2 start ./bin/www"
+    "start": "pm2 start ./bin/www",
+    "tcp": "pm2 start tcp_app.js"
   },
   "dependencies": {
     "child_process": "^1.0.2",
