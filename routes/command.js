@@ -16,6 +16,7 @@ router.get("/", function(req, res, next) {
 });
 
 router.post("/", function(req, res, next) {
+	console.log("TCL: req", req.body)
   var cmd = req.body.cmd;
   res.redirect("/cmd");
   ref.push().set(cmd);

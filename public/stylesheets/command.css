@@ -5,7 +5,14 @@
     align-items: center;
 }
 
-form div {
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    width: 80vw;
+    height: 90px;
     padding: 5px 10px;
     background: #eee;
     margin: 10px;
