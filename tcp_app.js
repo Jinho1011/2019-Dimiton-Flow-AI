@@ -12,10 +12,10 @@ tcp_server.on("connection", function(socket) {
 
 tcp_server.listen(tcp_port, () => {
   console.log("Server listening: " + tcp_port);
-  server.on("close", function() {
+  tcp_server.on("close", function() {
     console.log("Server Terminated");
   });
-  server.on("error", function(err) {
+  tcp_server.on("error", function(err) {
     console.log("Server Error: ", err);
   });
 });
