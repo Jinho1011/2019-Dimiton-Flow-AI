@@ -8,6 +8,11 @@ body {
   position: relative;
 }
 
+.nav-logo img {
+  width: auto;
+  height: 50px;
+}
+
 @media screen and (min-width: 1088px) {
   .container {
     max-width: 960px;
