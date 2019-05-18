@@ -17,7 +17,7 @@ seq_length = 12
 data_dim = 2
 hidden_dim = 80
 output_dim = 1
-learning_rate = 0.3
+learning_rate = 0.01
 iterations = 150
 
 # build datasets
@@ -84,7 +84,7 @@ while 1:
     #np.savetxt("data.csv",xy, delimiter=",")
     '''
 
-    # xy = xy[::-1]  # reverse order (chronically ordered)
+    xy = xy[::-1]  # reverse order (chronically ordered)
     train_size = int(len(xy) * 0.7)
     train_set = xy[0:train_size]
 #    test_set = xy[train_size - seq_length:]  # Index from [train_size - seq_length] to utilize past sequence
@@ -105,15 +105,16 @@ while 1:
         rmse_val = sess.run(rmse, feed_dict={
             targets: testY, predictions: test_predict})
         print("RMSE: {}".format(rmse_val))
-    np.savetxt("result.csv",test_predict,delimiter=",")
+        test_predict = test_predict[::-1]
+    np.savetxt("result.csv", test_predict ,delimiter=",")
     print("len of test_predict")
     print(len(test_predict))
     print("delay")
     import time
     time.sleep(10)
     # Plot predictions
-    # plt.plot(testY)
-    # plt.plot(test_predict)
-    # plt.xlabel("Time Period")
-    # plt.ylabel("Water level")
-    # plt.show()
+    plt.plot(testY)
+    plt.plot(test_predict)
+    plt.xlabel("Time Period")
+    plt.ylabel("Water level")
+    plt.show()
