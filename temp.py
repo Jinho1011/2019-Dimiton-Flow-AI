@@ -113,8 +113,8 @@ while 1:
     import time
     time.sleep(10)
     # Plot predictions
-    plt.plot(testY)
-    plt.plot(test_predict)
-    plt.xlabel("Time Period")
-    plt.ylabel("Water level")
-    plt.show()
+    # plt.plot(testY)
+    # plt.plot(test_predict)
+    # plt.xlabel("Time Period")
+    # plt.ylabel("Water level")
+    # plt.show()
