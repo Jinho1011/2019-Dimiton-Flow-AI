@@ -1,5 +1,10 @@
 var resData;
 var dataData;
+var turbResult = document.querySelector(".turb-result");
+var turbValue = document.querySelector("#turb-value").innerHTML;
+
+turbResult.innerHTML = turbValue;
+
 
 $.ajax({
   url: "/javascripts/result.csv",

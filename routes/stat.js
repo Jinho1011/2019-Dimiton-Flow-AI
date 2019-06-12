@@ -13,18 +13,20 @@ var lev, turb;
 // 예상 -> ""
 
 router.get("/", function(req, res, next) {
-  res.render("stat");
+  res.render("stat", {
+    turb: turb
+  });
 });
 
 router.post("/data", function(req, res, next) {
   var cmd = req.body.data;
+  console.log("TCL: cmd", cmd);
   var temp = cmd.split(",");
   lev = temp[0];
   console.log("TCL: lev", lev);
   turb = temp[1];
   console.log("TCL: turb", turb);
   var rawData = cmd + "\n";
-  // console.log("TCL: rawData", rawData)
   fs.appendFile("temp.csv", rawData, function(err) {
     if (err) throw err;
   });
