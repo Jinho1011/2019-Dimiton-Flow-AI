@@ -1,37 +1,50 @@
 var express = require("express");
-const { exec } = require("child_process");
 var fs = require("fs");
 var router = express.Router();
+var TURBIDITY; // 탁도
+var WATER_LEVEL; // 수위
 
-var lev, turb;
+// UDP SOCKET SERVER
+var dgram = require("dgram");
+var socket = dgram.createSocket("udp4");
+socket.bind(3000);
 
-// on1 -> 물이 들어옴
-// on2 -> 물을 방류함
-
-// 현재 수위 -> 막대 그래프
-// 탁도 -> 5분 간의 변화를 보여주도록 하는 시계열 그래프
-// 예상 -> ""
-
-router.get("/", function(req, res, next) {
-  console.log("TCL: turb", turb)
-  res.render("stat", {
-    turb: turb
-  });
+socket.on("listening", function() {
+  console.log("listening event");
 });
 
-router.post("/data", function(req, res, next) {
-  var cmd = req.body.data;
-  // console.log("TCL: cmd", cmd);
-  var temp = cmd.split(",");
-  lev = temp[0];
-  // console.log("TCL: lev", lev);
-  turb = temp[1];
-  // console.log("TCL: turb", turb);
-  var rawData = cmd + "\n";
-  fs.appendFile("temp.csv", rawData, function(err) {
-    if (err) throw err;
+socket.on("message", function(msg, rinfo) {
+  console.log(rinfo.address, msg.toString());
+  var UDP_RES = msg.toString
+  // TURBIDITY, WATER_LEVEL initializing
+  // append data to temp.csv
+});
+
+socket.on("close", function() {
+  console.log("close event");
+});
+
+// router.post("/data", function(req, res, next) {
+//   var cmd = req.body.data;
+//   // console.log("TCL: cmd", cmd);
+//   var temp = cmd.split(",");
+//   lev = temp[0];
+//   // console.log("TCL: lev", lev);
+//   turb = temp[1];
+//   // console.log("TCL: turb", turb);s
+//   var rawData = cmd + "\n";
+//   fs.appendFile("temp.csv", rawData, function(err) {
+//     if (err) throw err;
+//   });
+//   return res.redirect("/");
+// });
+
+
+// ROUTER
+router.get("/", function(req, res, next) {
+  res.render("stat", {
+    turb: TURBIDITY
   });
-  return res.redirect("/");
 });
 
 module.exports = {

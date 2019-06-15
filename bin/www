@@ -90,14 +90,4 @@ function onListening() {
   var bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
   debug("Listening on " + bind);
   console.log(`NodeJs Server listening on port : ${http_port}`);
-  setInterval(() => {
-    fs.readFile("temp.csv", "utf8", function(err, data) {
-      fs.appendFile("data.csv", data, function(err) {
-        if (err) throw err;
-      });
-      fs.writeFileSync("temp.csv", "", function(err) {
-        if (err) throw err;
-      });
-    });
-  }, 2000);
 }
