@@ -1,65 +1,58 @@
-@import url("https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700,800,900");
-@import url("https://fonts.googleapis.com/css?family=Fredoka+One");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap');
 
-.index-img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100vh;
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.title {
-  margin-top: 80px;
-  border-left: 2px solid orange;
-  padding-left: 20px;
+.top-section,
+.mid-section {
+    margin-bottom: 20px;
 }
 
-.title-content {
-  font-family: "Muli", sans-serif;
-  font-weight: 200;
-  color: #fefefe;
-  font-size: 50px;
+.nav-logo {
+    display: flex;
+    justify-content: center;
 }
 
-.title-content:last-child {
-  font-weight: 400;
+.nav-logo img {
+    box-shadow: 15px 19px 32px -18px rgba(21,19,19,.07);
 }
 
-.subtitle {
-  margin-top: 20px;
+.mid-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-.subtitle-content {
-  font-family: "Muli", sans-serif;
-  font-weight: 200;
-  color: #a0a0a0;
+.p-wrapper {
+    width: 50vw;
+    text-align: center;
+    font-size: 30px;
+    color: #fcfcfc;
+    font-family: 'Open Sans', sans-serif;
 }
 
-.to-stat {
-  margin-top: 40px;
+.bottom-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .stat-btn {
-  background: #0070cc;
-  width: max-content;
-  padding: 10px 60px;
-  border-radius: 30px;
-  color: #fefefe;
-  font-family: "Fredoka One", cursive;
-  font-size: 40px;
-  -webkit-box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-  transition: .2s;
+    border-radius: 40px !important;
+    background: #f9f9f9 !important;
+    color: #CE684D !important;
+    padding: 20px 50px !important;
+    box-shadow: 15px 19px 32px -18px rgba(21,19,19,.07);
+    transition: .2s;
 }
 
 .stat-btn:hover {
-    transform: scale(1.05);
+    box-shadow: 0 16px 36px 0 rgba(21,19,19,.15);
 }
 
-.stat-btn a {
-  
-  color: #efefef;
-  text-decoration: none;
-}

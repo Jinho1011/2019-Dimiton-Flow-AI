@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "C:\\Users\\weddf\\AppData\\Local\\Programs\\Python\\Python37\\python.exe"
+    "python.pythonPath": "C:\\Users\\weddf\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
+    "eslint.enable": true
 }

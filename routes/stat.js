@@ -1,52 +1,31 @@
-var express = require("express");
-var fs = require("fs");
-var router = express.Router();
-var TURBIDITY; // 탁도
-var WATER_LEVEL; // 수위
+const express = require('express')
+const fs = require('fs')
+const router = express.Router()
+let WATER_LEVEL
+let TURBIDITY
 
-// UDP SOCKET SERVER
-var dgram = require("dgram");
-var socket = dgram.createSocket("udp4");
-socket.bind(3000);
+const dgram = require('dgram')
+const socket = dgram.createSocket('udp4')
+socket.bind(3000)
 
-socket.on("listening", function() {
-  console.log("listening event");
-});
+socket.on('listening', function () {
+  console.log('listening event')
+})
 
-socket.on("message", function(msg, rinfo) {
-  console.log(rinfo.address, msg.toString());
-  var UDP_RES = msg.toString
-  // TURBIDITY, WATER_LEVEL initializing
-  // append data to temp.csv
-});
+socket.on('message', function (msg, rinfo) {
+  const UDP_RES = msg.toString()
+  console.log('TCL: UDP_RES', UDP_RES)
+  WATER_LEVEL = UDP_RES.split(',')[0]
+  TURBIDITY = UDP_RES.split(',')[1]
+  // fs.appendFile("./tensorflow/data-set.csv", WATER_LEVEL + "\n", function(err) {
+  //   if (err) throw err;
+  // });
+})
 
-socket.on("close", function() {
-  console.log("close event");
-});
+router.get('/', function (req, res, next) {
+  res.render('stat')
+  console.log('TCL: WATER_LEVEL', WATER_LEVEL)
+  console.log('TCL: TURBIDITY', TURBIDITY)
+})
 
-// router.post("/data", function(req, res, next) {
-//   var cmd = req.body.data;
-//   // console.log("TCL: cmd", cmd);
-//   var temp = cmd.split(",");
-//   lev = temp[0];
-//   // console.log("TCL: lev", lev);
-//   turb = temp[1];
-//   // console.log("TCL: turb", turb);s
-//   var rawData = cmd + "\n";
-//   fs.appendFile("temp.csv", rawData, function(err) {
-//     if (err) throw err;
-//   });
-//   return res.redirect("/");
-// });
-
-
-// ROUTER
-router.get("/", function(req, res, next) {
-  res.render("stat", {
-    turb: TURBIDITY
-  });
-});
-
-module.exports = {
-  router: router
-};
+module.exports = router
