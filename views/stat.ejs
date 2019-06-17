@@ -10,19 +10,20 @@
   <body>
     <div class="container">
       <div class="dam-container">
+      <div class="dam-container">
         <div class="dam-title">#Dam 01</div>
         <div class="dam-info-wrapper">
           <div class="dam-info-container">
             <div class="info-title">water level</div>
-            <div class="info-content"></div>
+            <div class="info-content" id="dam1-water-level"></div>
           </div>
           <div class="dam-info-container">
             <div class="info-title">water discharge</div>
-            <div class="info-content"></div>
+            <div class="info-content" id="dam1-water-discharge"></div>
           </div>
           <div class="dam-info-container">
             <div class="info-title">discharge status</div>
-            <div class="info-content"></div>
+            <div class="info-content" id="dam1-discharge-status">ON</div>
           </div>
           <div class="dam-info-container dummy">
               <div class="info-title">water quality</div>
@@ -35,43 +36,67 @@
         <div class="dam-info-wrapper">
           <div class="dam-info-container">
             <div class="info-title">water level</div>
-            <div class="info-content"></div>
+            <div class="info-content" id="dam2-water-level"></div>
           </div>
           <div class="dam-info-container">
             <div class="info-title">water discharge</div>
-            <div class="info-content"></div>
+            <div class="info-content" id="dam2-water-discharge"></div>
           </div>
           <div class="dam-info-container">
             <div class="info-title">discharge status</div>
-            <div class="info-content"></div>
-          </div>
-          <div class="dam-info-container dummy">
-              <div class="info-title">water quality</div>
-              <div class="info-content"></div>
-            </div>
-        </div>
-      </div>
-      <div class="dam-container">
-        <div class="dam-title">#Dam 03</div>
-        <div class="dam-info-wrapper">
-          <div class="dam-info-container">
-            <div class="info-title">water level</div>
-            <div class="info-content"></div>
-          </div>
-          <div class="dam-info-container">
-            <div class="info-title">water discharge</div>
-            <div class="info-content"></div>
-          </div>
-          <div class="dam-info-container">
-            <div class="info-title">discharge status</div>
-            <div class="info-content"></div>
+            <div class="info-content" id="dam2-discharge-status"></div>
           </div>
           <div class="dam-info-container">
             <div class="info-title">water quality</div>
-            <div class="info-content"></div>
+            <div class="info-content" id="dam2-water-quality"></div>
           </div>
         </div>
       </div>
     </div>
+
+    <script src="http://localhost:8080/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io.connect('http://localhost:8080')
+      var dam1WaterLevel = document.querySelector('#dam1-water-level')
+      var dam1WaterDischarge = document.querySelector('#dam1-water-discharge')
+      var dam1DischargeStatus = document.querySelector('#dam1-discharge-status')
+      var dam2WaterLevel = document.querySelector('#dam2-water-level')
+      var dam2WaterDischarge = document.querySelector('#dam2-water-discharge')
+      var dam2DischargeStatus = document.querySelector('#dam2-discharge-status')
+      var dam2WaterQuality = document.querySelector('#dam2-water-quality')
+
+      socket.on('water-level-1', (data) => {
+        dam1WaterLevel.innerHTML = `${data} EL.m`
+      })
+
+      socket.on('water-discharge-1', (data) => {
+        dam1WaterDischarge.innerHTML = `${data} m<sup>3</sup>/s`
+      })
+
+      socket.on('water-discharge-2', (data) => {
+        dam2WaterDischarge.innerHTML = `${data} cm<sup>3</sup>/s`
+      })
+
+      socket.on('discharge-status-2', (data) => {
+        if (data) {
+          dam2DischargeStatus.innerHTML = 'ON'
+
+        } else {
+          dam2DischargeStatus.innerHTML = 'OFF'
+        }
+      })
+
+      socket.on('water-level-2', (data) => {
+        dam2WaterLevel.innerHTML = data
+      })
+
+      socket.on('water-quality-2', (data) => {
+        if (data < 2) {
+          dam2WaterQuality.innerHTML = `농업용수 사용 불가능 : ${data}`
+        } else if (data < 6) {
+          dam2WaterQuality.innerHTML = `농업용수 사용 가능 : ${data}`
+        }
+      })
+    </script>
   </body>
 </html>
