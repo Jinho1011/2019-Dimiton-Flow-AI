@@ -5,12 +5,14 @@ var admin = require('firebase-admin')
 var database = admin.database()
 var ref = database.ref('time')
 
-var timeLeft = 878
+var timeLeft = 872
 ref.set(timeLeft)
 
 setInterval(() => {
-  timeLeft--
-  ref.set(timeLeft)
+  if (timeLeft) {
+    timeLeft--
+    ref.set(timeLeft)
+  }
 }, 1000)
 
 router.get('/', function (req, res, next) {

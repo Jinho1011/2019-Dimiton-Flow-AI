@@ -110,9 +110,13 @@
       })
 
       socket.on('discharge-status-timer-2', (data) => {
-        var minutes = Math.floor(data / 60);
-        var seconds = data - minutes * 60;
-        dam2DischargeTimer.innerHTML = `${minutes} : ${seconds}`
+        if (data > 0) {
+          var minutes = Math.floor(data / 60);
+          var seconds = data - minutes * 60;
+          dam2DischargeTimer.innerHTML = `${minutes} : ${seconds}`
+        } else {
+          dam2DischargeTimer.innerHTML = `방류 중!`
+        }
       })
 
       socket.on('water-quality-2', (data) => {
