@@ -1,28 +1,34 @@
 var express = require('express')
 var router = express.Router()
 var admin = require('firebase-admin')
-// var serviceAccount = require('./automatic-dam-firebase-adminsdk-boz33-fe04b539aa.json')
 
-// admin.initializeApp({
-//   credential: admin.credential.cert(serviceAccount),
-//   databaseURL: 'https://automatic-dam.firebaseio.com'
-// })
+var database = admin.database()
+var ref = database.ref('time')
 
-// var database = admin.database()
-// var ref = database.ref('queue/')
+var timeLeft = 878
+ref.set(timeLeft)
+
+setInterval(() => {
+  timeLeft--
+  ref.set(timeLeft)
+}, 1000)
 
 router.get('/', function (req, res, next) {
   res.render('command')
 })
 
 router.post('/', function (req, res, next) {
-  console.log('TCL: req', req.body)
-  setTimeout(function () {
-    var cmd = req.body.cmd
-    console.log("TCL: cmd", cmd)
-    res.redirect('/cmd')
-    // ref.push().set(cmd)
-  }, 500)
+  switch (req.body.cmd) {
+    case 'decrease 1 min':
+      timeLeft = timeLeft - 60
+      ref.set(timeLeft - 60)
+      break
+    case 'decrease 30 sec':
+      timeLeft = timeLeft - 30
+      ref.set(timeLeft - 30)
+      break
+  }
+  res.redirect('/cmd')
 })
 
 module.exports = router

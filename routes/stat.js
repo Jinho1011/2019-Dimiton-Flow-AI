@@ -21,18 +21,37 @@ var app = require('express')()
 var server = require('http').createServer(app)
 var io = require('socket.io')(server)
 var csvData
-fs.readFile('./tensorflow/easy.csv', { encoding: 'utf-8' }, function (err, data) {
-  if (err) { console.log('TCL: err', err) }
+
+fs.readFile('./tensorflow/easy.csv', {
+  encoding: 'utf-8'
+}, function (
+  err,
+  data
+) {
+  if (err) {
+    console.log('TCL: err', err)
+  }
   csvData = data.split('\n')
 })
+
 var waterDischarge = []
 var waterLevel = []
 var waterDischargeCnt = 0
 var waterLevelCnt = 0
 
-io.on('connection', (socket) => {
+var timeLeft
+var timeRef = database.ref('time')
+
+io.on('connection', socket => {
   io.emit('water-level-2', WATER_LEVEL)
 })
+
+setInterval(() => {
+  timeRef.once('value').then((s) => {
+    timeLeft = s.val()
+  })
+  io.emit('discharge-status-timer-2', timeLeft)
+}, 1000)
 
 setInterval(() => {
   io.emit('water-level-2', WATER_LEVEL)
@@ -46,11 +65,21 @@ setInterval(() => {
     waterLevel[i] = csvData[i].split(',')[4]
   }
   io.emit('water-discharge-1', waterDischarge[waterDischargeCnt])
-  io.emit('water-discharge-2', Math.abs(waterDischarge[waterDischargeCnt] * (Math.cos(waterDischarge[waterDischargeCnt] ^ 2 + 4 * Math.cos(waterDischarge[waterDischargeCnt] + 100)) / 9)))
+  io.emit(
+    'water-discharge-2',
+    Math.abs(
+      waterDischarge[waterDischargeCnt] *
+      (Math.cos(
+        waterDischarge[waterDischargeCnt] ^
+          (2 + 4 * Math.cos(waterDischarge[waterDischargeCnt] + 100))
+      ) /
+        9)
+    )
+  )
   io.emit('water-level-1', waterLevel[waterLevelCnt])
   waterDischargeCnt++
   waterLevelCnt++
-}, 10000)
+}, 5000)
 
 server.listen(8080, function () {
   console.log('Socket IO server listening on port 8080')
@@ -73,7 +102,7 @@ UDPsocket.on('message', function (msg, rinfo) {
 
   if (WATER_LEVEL > 8) {
     if (isChangable) {
-      ref.push().set('on')
+      ref.push().set('on1')
       isChangable = false
       isDischargingNow = true
     }
@@ -85,9 +114,6 @@ UDPsocket.on('message', function (msg, rinfo) {
     }
   }
 })
-// fs.appendFile("./tensorflow/easy.csv", WATER_LEVEL + "\n", function(err) {
-//   if (err) throw err;
-// });
 
 router.get('/', function (req, res, next) {
   res.render('stat')

@@ -36,18 +36,21 @@ body {
 }
 
 .info-content {
+    width: 300px;
+    height: 200px;
     margin-top: 5px;
     border-radius: 20px;
-    padding: 80px;
+    padding: 40px;
     background: #F9F9F9;
     box-shadow: 15px 19px 32px -18px rgba(21,19,19,.07);
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     transition: .2s;
     font-size: 20px;
     font-family: 'Open Sans', sans-serif;
-    color: #333;
+    color: #2d3436;
     font-weight: bold;
 }
 
@@ -55,6 +58,14 @@ body {
     transform: scale(1.05);
     box-shadow: 0 16px 36px 0 rgba(21,19,19,.15);
     cursor: pointer;
+}
+
+.divided:first-child {
+    margin-bottom: 20px;
+}
+
+.divided {
+    height: 90px;
 }
 
 .dummy {

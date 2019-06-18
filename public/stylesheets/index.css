@@ -20,7 +20,8 @@
 }
 
 .nav-logo img {
-    box-shadow: 15px 19px 32px -18px rgba(21,19,19,.07);
+    width: 40vw;
+    /* box-shadow: 15px 19px 32px -18px rgba(21,19,19,.07); */
 }
 
 .mid-section {
