@@ -15,6 +15,7 @@ ref.once('value').then((s) => {
 // 얘는 한번만 실행됨
 
 setInterval(() => {
+  console.log('TCL: timeLeft', timeLeft)
   if (timeLeft > 0) {
     timeLeft--
     ref.set(timeLeft)

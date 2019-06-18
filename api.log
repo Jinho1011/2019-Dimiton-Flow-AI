@@ -12518,3 +12518,92 @@ TCL: timeLeft 820
 TCL: timeLeft 819
 TCL: timeLeft 818
 TCL: timeLeft 817
+TCL: timeLeft 816
+TCL: timeLeft 815
+TCL: timeLeft 814
+TCL: timeLeft 813
+TCL: timeLeft 812
+TCL: timeLeft 811
+TCL: timeLeft 810
+TCL: timeLeft 809
+TCL: timeLeft 808
+TCL: timeLeft 807
+TCL: timeLeft 806
+TCL: timeLeft 805
+TCL: timeLeft 804
+TCL: timeLeft 803
+TCL: timeLeft 802
+TCL: timeLeft 801
+TCL: timeLeft 800
+TCL: timeLeft 799
+TCL: timeLeft 798
+TCL: timeLeft 797
+TCL: timeLeft 796
+TCL: timeLeft 795
+TCL: timeLeft 794
+TCL: timeLeft 793
+Socket IO server listening on port 8080
+listening event
+NodeJs Server listening on port : 80
+[0mGET /stat [36m304 [0m29.018 ms - -[0m
+[0mGET /stylesheets/stat.css [36m304 [0m2.586 ms - -[0m
+[0mGET /stylesheets/background.css [36m304 [0m3.000 ms - -[0m
+[0mGET /stylesheets/reset.css [36m304 [0m1.123 ms - -[0m
+[0mGET /stylesheets/bulma.css [36m304 [0m1.185 ms - -[0m
+[0mGET /javascripts/stat.js [36m304 [0m1.207 ms - -[0m
+COMMAND: timeLeft 687
+[0mPOST /cmd [36m302 [0m32.253 ms - 52[0m
+[0mGET /cmd [32m200 [0m3.476 ms - 1213[0m
+[0mGET /stylesheets/command.css [36m304 [0m1.284 ms - -[0m
+[0mGET /stylesheets/background.css [36m304 [0m1.033 ms - -[0m
+[0mGET /stylesheets/reset.css [36m304 [0m0.578 ms - -[0m
+COMMAND: timeLeft 624
+[0mPOST /cmd [36m302 [0m3.648 ms - 52[0m
+[0mGET /cmd [32m200 [0m1.321 ms - 1213[0m
+[0mGET /stylesheets/command.css [36m304 [0m0.833 ms - -[0m
+[0mGET /stylesheets/background.css [36m304 [0m0.841 ms - -[0m
+[0mGET /stylesheets/reset.css [36m304 [0m0.453 ms - -[0m
+COMMAND: timeLeft 561
+[0mPOST /cmd [36m302 [0m2.228 ms - 52[0m
+[0mGET /cmd [32m200 [0m1.590 ms - 1213[0m
+[0mGET /stylesheets/command.css [36m304 [0m0.988 ms - -[0m
+[0mGET /stylesheets/background.css [36m304 [0m1.640 ms - -[0m
+[0mGET /stylesheets/reset.css [36m304 [0m0.875 ms - -[0m
+Socket IO server listening on port 8080
+listening event
+NodeJs Server listening on port : 80
+TCL: timeLeft undefined
+TCL: timeLeft 478
+TCL: timeLeft 477
+TCL: timeLeft 476
+TCL: timeLeft 475
+TCL: timeLeft 474
+TCL: timeLeft 473
+TCL: timeLeft 472
+TCL: timeLeft 471
+TCL: timeLeft 470
+TCL: timeLeft 469
+TCL: timeLeft 468
+TCL: timeLeft 467
+TCL: timeLeft 466
+TCL: timeLeft 465
+TCL: timeLeft 464
+TCL: timeLeft 463
+TCL: timeLeft 462
+TCL: timeLeft 461
+TCL: timeLeft 460
+TCL: timeLeft 459
+TCL: timeLeft 458
+TCL: timeLeft 457
+TCL: timeLeft 456
+TCL: timeLeft 455
+TCL: timeLeft 454
+TCL: timeLeft 453
+TCL: timeLeft 452
+TCL: timeLeft 451
+TCL: timeLeft 450
+TCL: timeLeft 449
+TCL: timeLeft 448
+TCL: timeLeft 447
+TCL: timeLeft 446
+TCL: timeLeft 445
