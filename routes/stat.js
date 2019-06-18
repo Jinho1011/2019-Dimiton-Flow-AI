@@ -57,7 +57,7 @@ setInterval(() => {
   io.emit('water-level-2', WATER_LEVEL)
   io.emit('discharge-status-2', isDischargingNow)
   io.emit('water-quality-2', TURBIDITY)
-}, 500)
+}, 100)
 
 setInterval(() => {
   for (var i in csvData) {
@@ -100,53 +100,23 @@ UDPsocket.on('message', function (msg, rinfo) {
   WATER_LEVEL = UDP_RES.split(',')[0]
   TURBIDITY = UDP_RES.split(',')[1]
 
-  if (WATER_LEVEL > 8) {
-    if (isChangable) {
-      ref.push().set('on1')
-      isChangable = false
-      isDischargingNow = true
-    }
-  } else {
-    if (!isChangable) {
-      ref.push().set('off1')
-      isChangable = true
-      isDischargingNow = false
-    }
-  }
+  // if (WATER_LEVEL > 10) {
+  //   if (isChangable) {
+  //     ref.push().set('on1')
+  //     isChangable = false
+  //     isDischargingNow = true
+  //   }
+  // } else {
+  //   if (!isChangable) {
+  //     ref.push().set('off1')
+  //     isChangable = true
+  //     isDischargingNow = false
+  //   }
+  // }
 })
 
 router.get('/', function (req, res, next) {
   res.render('stat')
-})
-
-router.get('/on1', function (req, res, next) {
-  ref.push().set('on1')
-  res.redirect('/stat')
-})
-
-router.get('/on2', function (req, res, next) {
-  ref.push().set('on2')
-  res.redirect('/stat')
-})
-
-router.get('/off2', function (req, res, next) {
-  ref.push().set('off2')
-  res.redirect('/stat')
-})
-
-router.get('/off1', function (req, res, next) {
-  ref.push().set('off1')
-  res.redirect('/stat')
-})
-
-router.get('/onall', function (req, res, next) {
-  ref.push().set('onall')
-  res.redirect('/stat')
-})
-
-router.get('/offall', function (req, res, next) {
-  ref.push().set('offall')
-  res.redirect('/stat')
 })
 
 module.exports = router

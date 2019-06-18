@@ -120,12 +120,12 @@
       })
 
       socket.on('water-quality-2', (data) => {
-        if (data < 2) {
+        if (data < 4 ) {
           dam2WaterQualityTitle.innerHTML = `농업용수 사용 불가능`
-          dam2WaterQualityValue.innerHTML = `${data}`
+          dam2WaterQualityValue.innerHTML = `${data} v`
         } else if (data < 6) {
           dam2WaterQualityTitle.innerHTML = `농업용수 사용 가능`
-          dam2WaterQualityValue.innerHTML = `${data}`
+          dam2WaterQualityValue.innerHTML = `${data} v`
         }
       })
     </script>

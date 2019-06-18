@@ -4,14 +4,18 @@ var admin = require('firebase-admin')
 
 var database = admin.database()
 var ref = database.ref('time')
+var cmdRef = database.ref('queue/')
 
 var timeLeft = 872
 ref.set(timeLeft)
+// 얘는 한번만 실행됨
 
 setInterval(() => {
-  if (timeLeft) {
+  if (timeLeft > 0) {
     timeLeft--
     ref.set(timeLeft)
+  } else {
+
   }
 }, 1000)
 
@@ -40,6 +44,24 @@ router.post('/', function (req, res, next) {
     case 'increase 30 sec':
       timeLeft = timeLeft + 30
       ref.set(timeLeft)
+      break
+    case 'on1':
+      cmdRef.push().set('on1')
+      break
+    case 'on2':
+      cmdRef.push().set('on2')
+      break
+    case 'off1':
+      cmdRef.push().set('off1')
+      break
+    case 'off2':
+      cmdRef.push().set('off2')
+      break
+    case 'onall':
+      cmdRef.push().set('onall')
+      break
+    case 'ofall':
+      cmdRef.push().set('ofall')
       break
   }
   res.redirect('/cmd')

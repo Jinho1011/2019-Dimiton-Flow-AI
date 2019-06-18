@@ -10702,3 +10702,45 @@ NodeJs Server listening on port : 80
 [0mGET /stylesheets/command.css [36m304 [0m0.922 ms - -[0m
 [0mGET /stylesheets/background.css [36m304 [0m1.637 ms - -[0m
 [0mGET /stylesheets/reset.css [36m304 [0m2.458 ms - -[0m
+Socket IO server listening on port 8080
+listening event
+NodeJs Server listening on port : 80
+[0mGET /%EC%B8%B5 [33m404 [0m12.058 ms - 1196[0m
+[0mGET /cmd [32m200 [0m3.848 ms - 1196[0m
+[0mGET /stylesheets/command.css [36m304 [0m1.724 ms - -[0m
+[0mGET /stylesheets/background.css [36m304 [0m2.811 ms - -[0m
+[0mGET /stylesheets/reset.css [36m304 [0m1.069 ms - -[0m
+Socket IO server listening on port 8080
+listening event
+NodeJs Server listening on port : 80
+[0mGET /stat [32m200 [0m16.971 ms - 5163[0m
+[0mGET /stylesheets/stat.css [36m304 [0m2.779 ms - -[0m
+[0mGET /stylesheets/background.css [36m304 [0m3.250 ms - -[0m
+[0mGET /stylesheets/reset.css [36m304 [0m2.588 ms - -[0m
+[0mGET /stylesheets/bulma.css [36m304 [0m1.810 ms - -[0m
+[0mGET /javascripts/stat.js [36m304 [0m1.816 ms - -[0m
+[0mGET /stat [32m200 [0m4.034 ms - 5163[0m
+[0mGET /stylesheets/stat.css [36m304 [0m0.540 ms - -[0m
+[0mGET /stylesheets/background.css [36m304 [0m1.422 ms - -[0m
+[0mGET /stylesheets/reset.css [36m304 [0m1.482 ms - -[0m
+[0mGET /stylesheets/bulma.css [36m304 [0m1.383 ms - -[0m
+[0mGET /javascripts/stat.js [36m304 [0m1.454 ms - -[0m
+Socket IO server listening on port 8080
+listening event
+NodeJs Server listening on port : 80
+Socket IO server listening on port 8080
+listening event
+NodeJs Server listening on port : 80
+Socket IO server listening on port 8080
+listening event
+NodeJs Server listening on port : 80
+[0mGET / [36m304 [0m10.668 ms - -[0m
+[0mGET /stylesheets/index.css [36m304 [0m2.303 ms - -[0m
+[0mGET /stylesheets/background.css [36m304 [0m2.155 ms - -[0m
+[0mGET /stylesheets/btn.css [36m304 [0m1.110 ms - -[0m
+[0mGET /stylesheets/reset.css [36m304 [0m0.966 ms - -[0m
+[0mGET /img/logo.svg [36m304 [0m0.980 ms - -[0m
+[0mGET /cmd [36m304 [0m2.514 ms - -[0m
+[0mGET /stylesheets/background.css [36m304 [0m0.727 ms - -[0m
+[0mGET /stylesheets/command.css [36m304 [0m0.692 ms - -[0m
+[0mGET /stylesheets/reset.css [36m304 [0m0.691 ms - -[0m
