@@ -6,6 +6,8 @@ var database = admin.database()
 var ref = database.ref('time')
 var cmdRef = database.ref('queue/')
 
+var stat = true
+
 var timeLeft = 872
 ref.set(timeLeft)
 // 얘는 한번만 실행됨
@@ -15,7 +17,15 @@ setInterval(() => {
     timeLeft--
     ref.set(timeLeft)
   } else {
-
+    if (stat) {
+      cmdRef.push().set('on1')
+      timeLeft = 10
+      stat = false
+    } else {
+      cmdRef.push().set('off1')
+      timeLeft = 2861
+      stat = true
+    }
   }
 }, 1000)
 
@@ -27,6 +37,10 @@ router.post('/', function (req, res, next) {
   switch (req.body.cmd) {
     case 'reset to 14:32 (872)':
       timeLeft = 872
+      ref.set(timeLeft)
+      break
+    case 'decrease 11 min 12 sec':
+      timeLeft = timeLeft - 672
       ref.set(timeLeft)
       break
     case 'decrease 1 min':

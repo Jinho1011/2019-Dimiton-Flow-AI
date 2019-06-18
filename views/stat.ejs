@@ -94,7 +94,7 @@
       })
 
       socket.on('water-level-2', (data) => {
-        dam2WaterLevel.innerHTML = data
+        dam2WaterLevel.innerHTML = `${data} cm`
       })
 
       socket.on('water-discharge-2', (data) => {
@@ -110,13 +110,9 @@
       })
 
       socket.on('discharge-status-timer-2', (data) => {
-        if (data > 0) {
           var minutes = Math.floor(data / 60);
           var seconds = data - minutes * 60;
           dam2DischargeTimer.innerHTML = `${minutes} : ${seconds}`
-        } else {
-          dam2DischargeTimer.innerHTML = `방류 중!`
-        }
       })
 
       socket.on('water-quality-2', (data) => {
