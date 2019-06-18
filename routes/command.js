@@ -13,6 +13,7 @@ ref.set(timeLeft)
 // 얘는 한번만 실행됨
 
 setInterval(() => {
+  console.log('TCL: timeLeft', timeLeft)
   if (timeLeft > 0) {
     timeLeft--
     ref.set(timeLeft)
@@ -34,30 +35,35 @@ router.get('/', function (req, res, next) {
 })
 
 router.post('/', function (req, res, next) {
-  console.log('TCL: req.body.cmd', req.body)
   switch (req.body.cmd) {
     case 'reset to 14:32 (872)':
       timeLeft = 872
+      console.log('COMMAND: timeLeft', timeLeft)
       ref.set(timeLeft)
       break
     case 'decrease 11 min 12 sec':
       timeLeft = timeLeft - 611
+      console.log('COMMAND: timeLeft', timeLeft)
       ref.set(timeLeft)
       break
     case 'decrease 1 min':
       timeLeft = timeLeft - 60
+      console.log('COMMAND: timeLeft', timeLeft)
       ref.set(timeLeft)
       break
     case 'decrease 30 sec':
       timeLeft = timeLeft - 30
+      console.log('COMMAND: timeLeft', timeLeft)
       ref.set(timeLeft)
       break
     case 'increase 1 min':
       timeLeft = timeLeft + 60
+      console.log('COMMAND: timeLeft', timeLeft)
       ref.set(timeLeft)
       break
     case 'increase 30 sec':
       timeLeft = timeLeft + 30
+      console.log('COMMAND: timeLeft', timeLeft)
       ref.set(timeLeft)
       break
     case 'on1':

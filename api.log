@@ -12274,3 +12274,15 @@ TCL: req.body.cmd decrease 1 min
 [0mGET /stylesheets/command.css [36m304 [0m1.081 ms - -[0m
 [0mGET /stylesheets/background.css [36m304 [0m1.042 ms - -[0m
 [0mGET /stylesheets/reset.css [36m304 [0m1.031 ms - -[0m
+[0mGET /stat [36m304 [0m2.254 ms - -[0m
+[0mGET /stylesheets/stat.css [36m304 [0m0.616 ms - -[0m
+[0mGET /stylesheets/background.css [36m304 [0m0.754 ms - -[0m
+[0mGET /stylesheets/reset.css [36m304 [0m0.702 ms - -[0m
+[0mGET /stylesheets/bulma.css [36m304 [0m0.716 ms - -[0m
+[0mGET /javascripts/stat.js [36m304 [0m0.917 ms - -[0m
+TCL: req.body.cmd reset to 14:32 (872)
+[0mPOST /cmd [36m302 [0m2.485 ms - 52[0m
+[0mGET /cmd [32m200 [0m1.510 ms - 1213[0m
+[0mGET /stylesheets/command.css [36m304 [0m0.459 ms - -[0m
+[0mGET /stylesheets/background.css [36m304 [0m0.753 ms - -[0m
+[0mGET /stylesheets/reset.css [36m304 [0m0.745 ms - -[0m
