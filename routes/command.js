@@ -15,6 +15,9 @@ ref.once('value').then((s) => {
 // 얘는 한번만 실행됨
 
 setInterval(() => {
+  ref.once('value').then((s) => {
+    timeLeft = s.val()
+  })
   console.log('TCL: timeLeft', timeLeft)
   if (timeLeft > 0) {
     timeLeft--
@@ -30,9 +33,6 @@ setInterval(() => {
       stat = true
     }
   }
-  ref.once('value').then((s) => {
-    timeLeft = s.val()
-  })
 }, 1000)
 
 router.get('/', function (req, res, next) {

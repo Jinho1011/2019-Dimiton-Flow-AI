@@ -48,9 +48,9 @@ io.on('connection', socket => {
 
 setInterval(() => {
   timeRef.once('value').then((s) => {
-    timeLeft = s.val()
+    io.emit('discharge-status-timer-2', s.val())
+    console.log('TCL: s.val()', s.val())
   })
-  io.emit('discharge-status-timer-2', timeLeft)
 }, 1000)
 
 setInterval(() => {
