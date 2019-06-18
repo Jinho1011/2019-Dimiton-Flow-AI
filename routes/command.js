@@ -40,7 +40,7 @@ router.post('/', function (req, res, next) {
       ref.set(timeLeft)
       break
     case 'decrease 11 min 12 sec':
-      timeLeft = timeLeft - 672
+      timeLeft = timeLeft - 611
       ref.set(timeLeft)
       break
     case 'decrease 1 min':
