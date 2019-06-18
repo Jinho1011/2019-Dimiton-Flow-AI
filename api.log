@@ -11805,3 +11805,22 @@ NodeJs Server listening on port : 80
 Socket IO server listening on port 8080
 listening event
 NodeJs Server listening on port : 80
+[0mGET /stat [36m304 [0m12.459 ms - -[0m
+[0mGET /stylesheets/stat.css [36m304 [0m2.233 ms - -[0m
+[0mGET /stylesheets/background.css [36m304 [0m2.533 ms - -[0m
+[0mGET /stylesheets/reset.css [36m304 [0m1.789 ms - -[0m
+[0mGET /stylesheets/bulma.css [36m304 [0m1.944 ms - -[0m
+[0mGET /javascripts/stat.js [36m304 [0m1.981 ms - -[0m
+Socket IO server listening on port 8080
+listening event
+NodeJs Server listening on port : 80
+[0mGET /stat [36m304 [0m21.201 ms - -[0m
+[0mGET /stylesheets/stat.css [36m304 [0m1.753 ms - -[0m
+[0mGET /stylesheets/background.css [36m304 [0m2.294 ms - -[0m
+[0mGET /stylesheets/reset.css [36m304 [0m1.787 ms - -[0m
+[0mGET /stylesheets/bulma.css [36m304 [0m0.713 ms - -[0m
+[0mGET /javascripts/stat.js [36m304 [0m0.699 ms - -[0m
+[0mGET /cmd [32m200 [0m5.222 ms - 1273[0m
+[0mGET /stylesheets/command.css [36m304 [0m0.461 ms - -[0m
+[0mGET /stylesheets/background.css [36m304 [0m0.772 ms - -[0m
+[0mGET /stylesheets/reset.css [36m304 [0m0.845 ms - -[0m
