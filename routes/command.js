@@ -28,6 +28,9 @@ setInterval(() => {
       stat = true
     }
   }
+  ref.once('value').then((s) => {
+    timeLeft = s.val()
+  })
 }, 1000)
 
 router.get('/', function (req, res, next) {

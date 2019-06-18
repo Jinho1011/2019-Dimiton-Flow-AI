@@ -12286,3 +12286,106 @@ TCL: req.body.cmd reset to 14:32 (872)
 [0mGET /stylesheets/command.css [36m304 [0m0.459 ms - -[0m
 [0mGET /stylesheets/background.css [36m304 [0m0.753 ms - -[0m
 [0mGET /stylesheets/reset.css [36m304 [0m0.745 ms - -[0m
+[0mGET /stat [36m304 [0m0.945 ms - -[0m
+[0mGET /stylesheets/stat.css [36m304 [0m0.463 ms - -[0m
+[0mGET /stylesheets/background.css [36m304 [0m0.448 ms - -[0m
+[0mGET /stylesheets/reset.css [36m304 [0m0.338 ms - -[0m
+[0mGET /stylesheets/bulma.css [36m304 [0m0.809 ms - -[0m
+[0mGET /javascripts/stat.js [36m304 [0m1.090 ms - -[0m
+Socket IO server listening on port 8080
+listening event
+NodeJs Server listening on port : 80
+TCL: timeLeft 872
+TCL: timeLeft 871
+TCL: timeLeft 870
+TCL: timeLeft 869
+TCL: timeLeft 868
+TCL: timeLeft 867
+TCL: timeLeft 866
+TCL: timeLeft 865
+TCL: timeLeft 864
+TCL: timeLeft 863
+TCL: timeLeft 862
+TCL: timeLeft 861
+TCL: timeLeft 860
+TCL: timeLeft 859
+TCL: timeLeft 858
+TCL: timeLeft 857
+TCL: timeLeft 856
+TCL: timeLeft 855
+TCL: timeLeft 854
+TCL: timeLeft 853
+TCL: timeLeft 852
+TCL: timeLeft 851
+TCL: timeLeft 850
+TCL: timeLeft 849
+TCL: timeLeft 848
+[0mGET / [36m304 [0m23.760 ms - -[0m
+[0mGET /stylesheets/index.css [36m304 [0m3.111 ms - -[0m
+[0mGET /stylesheets/background.css [36m304 [0m3.090 ms - -[0m
+[0mGET /stylesheets/reset.css [36m304 [0m2.106 ms - -[0m
+[0mGET /stylesheets/btn.css [36m304 [0m1.664 ms - -[0m
+[0mGET /img/logo.svg [36m304 [0m1.397 ms - -[0m
+TCL: timeLeft 847
+TCL: timeLeft 846
+TCL: timeLeft 845
+[0mGET /cmd [36m304 [0m4.750 ms - -[0m
+[0mGET /stylesheets/command.css [36m304 [0m1.852 ms - -[0m
+[0mGET /stylesheets/background.css [36m304 [0m1.706 ms - -[0m
+[0mGET /stylesheets/reset.css [36m304 [0m1.480 ms - -[0m
+TCL: timeLeft 844
+TCL: timeLeft 843
+COMMAND: timeLeft 872
+[0mPOST /cmd [36m302 [0m29.864 ms - 52[0m
+[0mGET /cmd [32m200 [0m1.334 ms - 1213[0m
+[0mGET /stylesheets/command.css [36m304 [0m1.121 ms - -[0m
+[0mGET /stylesheets/background.css [36m304 [0m1.090 ms - -[0m
+[0mGET /stylesheets/reset.css [36m304 [0m1.200 ms - -[0m
+TCL: timeLeft 872
+TCL: timeLeft 871
+TCL: timeLeft 870
+TCL: timeLeft 869
+TCL: timeLeft 868
+TCL: timeLeft 867
+TCL: timeLeft 866
+TCL: timeLeft 865
+TCL: timeLeft 864
+TCL: timeLeft 863
+TCL: timeLeft 862
+TCL: timeLeft 861
+TCL: timeLeft 860
+TCL: timeLeft 859
+TCL: timeLeft 858
+TCL: timeLeft 857
+TCL: timeLeft 856
+TCL: timeLeft 855
+TCL: timeLeft 854
+TCL: timeLeft 853
+TCL: timeLeft 852
+TCL: timeLeft 851
+TCL: timeLeft 850
+TCL: timeLeft 849
+TCL: timeLeft 848
+TCL: timeLeft 847
+TCL: timeLeft 846
+TCL: timeLeft 845
+TCL: timeLeft 844
+TCL: timeLeft 843
+TCL: timeLeft 842
+TCL: timeLeft 841
+TCL: timeLeft 840
+TCL: timeLeft 839
+TCL: timeLeft 838
+TCL: timeLeft 837
+TCL: timeLeft 836
+TCL: timeLeft 835
+TCL: timeLeft 834
+TCL: timeLeft 833
+TCL: timeLeft 832
+TCL: timeLeft 831
+TCL: timeLeft 830
+TCL: timeLeft 829
+TCL: timeLeft 828
+TCL: timeLeft 827
+TCL: timeLeft 826
+TCL: timeLeft 825
