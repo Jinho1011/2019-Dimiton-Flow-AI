@@ -34,7 +34,7 @@ router.get('/', function (req, res, next) {
 })
 
 router.post('/', function (req, res, next) {
-  console.log('req.body.cmd')
+  console.log('TCL: req.body.cmd', req.body.cmd)
   switch (req.body.cmd) {
     case 'reset to 14:32 (872)':
       timeLeft = 872
