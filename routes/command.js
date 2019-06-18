@@ -30,6 +30,9 @@ setInterval(() => {
       stat = true
     }
   }
+  ref.once('value').then((s) => {
+    timeLeft = s.val()
+  })
 }, 1000)
 
 router.get('/', function (req, res, next) {
@@ -37,6 +40,9 @@ router.get('/', function (req, res, next) {
 })
 
 router.post('/', function (req, res, next) {
+  ref.once('value').then((s) => {
+    timeLeft = s.val()
+  })
   switch (req.body.cmd) {
     case 'reset to 14:32 (872)':
       timeLeft = 872
