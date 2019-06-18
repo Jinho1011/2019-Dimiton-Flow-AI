@@ -74,8 +74,8 @@ router.post('/', function (req, res, next) {
     case 'onall':
       cmdRef.push().set('onall')
       break
-    case 'ofall':
-      cmdRef.push().set('ofall')
+    case 'offall':
+      cmdRef.push().set('offall')
       break
   }
   res.redirect('/cmd')
