@@ -6,7 +6,8 @@
     "start": "pm2 start ./bin/www -o ./api.log ",
     "restart": "pm2 restart 0",
     "delete": "pm2 delete 0",
-    "monit": "pm2 monit"
+    "monit": "pm2 monit",
+    "pull": "git stash && git pull origin master && npm restart"
   },
   "dependencies": {
     "child_process": "^1.0.2",
