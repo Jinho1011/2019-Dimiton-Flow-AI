@@ -8,12 +8,13 @@ var cmdRef = database.ref('queue/')
 
 var stat = true
 
-var timeLeft = 872
-ref.set(timeLeft)
+var timeLeft
+ref.once('value').then((s) => {
+  timeLeft = s.val()
+})
 // 얘는 한번만 실행됨
 
 setInterval(() => {
-  console.log('TCL: timeLeft', timeLeft)
   if (timeLeft > 0) {
     timeLeft--
     ref.set(timeLeft)
@@ -28,9 +29,6 @@ setInterval(() => {
       stat = true
     }
   }
-  ref.once('value').then((s) => {
-    timeLeft = s.val()
-  })
 }, 1000)
 
 router.get('/', function (req, res, next) {
